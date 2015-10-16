@@ -37,6 +37,7 @@ $app->get('/blog/{id}', function (Silex\Application $app, $id) use ($blogPosts) 
 
     return  "<h1>{$post['title']}</h1>".
     "<p>{$post['body']}</p>";
-});
+})
+    ->assert('id', '\d+');
 
 $app->run();
